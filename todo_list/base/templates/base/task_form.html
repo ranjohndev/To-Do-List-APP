@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %}
+{% block content %}
+{% load static %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<style>
+    body {
+        background-image: url("{% static 'todolistapp7.jpg' %}");
+        background-size: cover;
+        /* Additional CSS properties */
+    }
+</style>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+
+
+{% endblock content %}
